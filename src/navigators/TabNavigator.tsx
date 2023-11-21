@@ -3,7 +3,10 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { COLORS } from '../theme/theme';
 import HomeScreen from '../screens/HomeScreen';
-import { BlurView } from '@react-native-community/blur';
+import { BlurView } from 'expo-blur';
+import CustomIcon from '../components/CustomIcon';
+import CartScreen from '../screens/CartScreen';
+import OrderHistoryScreen from '../screens/OrderHIstoryScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,10 +18,48 @@ const TabNavigator = () => {
                 headerShown: false,
                 tabBarShowLabel: false,
                 tabBarStyle: styles.tabBarStyle,
+                tabBarBackground: () => <BlurView style={styles.BlurViewStyles} tint="dark" intensity={100} />,
             }}
         >
-            <Tab.Screen name="Home" component={HomeScreen}></Tab.Screen>
-            
+            <Tab.Screen
+                name="Home"
+                component={HomeScreen}
+                options={{
+                    tabBarIcon: ({ focused, color, size }) => (
+                        <CustomIcon
+                            name="home"
+                            size={25}
+                            color={focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex}
+                        />
+                    ),
+                }}
+            ></Tab.Screen>
+            <Tab.Screen
+                name="Cart"
+                component={CartScreen}
+                options={{
+                    tabBarIcon: ({ focused, color, size }) => (
+                        <CustomIcon
+                            name="cart"
+                            size={25}
+                            color={focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex}
+                        />
+                    ),
+                }}
+            ></Tab.Screen>
+            <Tab.Screen
+                name="History"
+                component={OrderHistoryScreen}
+                options={{
+                    tabBarIcon: ({ focused, color, size }) => (
+                        <CustomIcon
+                            name="bell"
+                            size={25}
+                            color={focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex}
+                        />
+                    ),
+                }}
+            ></Tab.Screen>
         </Tab.Navigator>
     );
 };
