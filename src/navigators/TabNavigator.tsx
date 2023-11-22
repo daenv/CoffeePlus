@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import SvgUri from 'react-native-svg-uri';
 import { BlurView } from 'expo-blur';
 import { COLORS } from '../theme/theme';
 import HomeScreen from '../screens/HomeScreen';
