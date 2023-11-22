@@ -3,6 +3,7 @@ import React from 'react';
 import { COLORS, SPACING } from '../theme/theme';
 import { LinearGradient } from 'expo-linear-gradient';
 import CustomIcon from './CustomIcon';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 interface GradientBGIconProps {
     name: string;
@@ -19,7 +20,7 @@ const GradientBGIcon: React.FC<GradientBGIconProps> = ({ name, color, size }) =>
                 colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
                 style={styles.LinearGradientBG}
             >
-                <CustomIcon name={name} color={color} size={size} />
+                <MaterialCommunityIcons name="menu" color={color} size={size} />
             </LinearGradient>
         </View>
     );
@@ -36,6 +37,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: COLORS.secondaryDarkGreyHex,
         overflow: 'hidden',
+        marginTop: 20,
     },
     LinearGradientBG: {
         height: SPACING.space_36,
