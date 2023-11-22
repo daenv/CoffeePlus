@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import { COLORS, SPACING } from '../theme/theme';
+import { COLORS, SPACING } from '../../theme/theme';
 import { LinearGradient } from 'expo-linear-gradient';
-import CustomIcon from './CustomIcon';
+import CustomIcon from '../CustomIcon';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons'
 
 interface GradientBGIconProps {
     name: string;
@@ -20,7 +21,7 @@ const GradientBGIcon: React.FC<GradientBGIconProps> = ({ name, color, size }) =>
                 colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
                 style={styles.LinearGradientBG}
             >
-                <MaterialCommunityIcons name="menu" color={color} size={size} />
+                <MaterialCommunityIcons name ={'menu'} color={color} size={size} />
             </LinearGradient>
         </View>
     );

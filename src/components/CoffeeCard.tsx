@@ -70,7 +70,7 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({
                         color={COLORS.primaryWhiteHex}
                         name={'plus'}
                         BGColor={COLORS.primaryOrangeHex}
-                        size={FONTSIZE.size_24}
+                        size={FONTSIZE.size_30}
                     />
                 </TouchableOpacity>
             </View>

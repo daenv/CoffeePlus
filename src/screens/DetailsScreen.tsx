@@ -11,6 +11,8 @@ import {
 import { useStore } from '../store/store';
 import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../theme/theme';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import ImageBackgroundInfo from '../components/ImageBackgroundInfo';
+import PaymentFooter from '../components/PaymentFooter';
 
 const DetailsScreen = ({ navigation, route }: any) => {
     const ItemOfIndex = useStore((state: any) => (route.params.type == 'Coffee' ? state.CoffeeList : state.BeanList))[
@@ -51,6 +53,21 @@ const DetailsScreen = ({ navigation, route }: any) => {
             <StatusBar backgroundColor={COLORS.primaryBlackHex} />
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.ScrollViewFlex}>
                 {/* // image backgroud */}
+                <ImageBackgroundInfo
+                    EnableBackHandler={true}
+                    imagelink_portrait={ItemOfIndex.imagelink_portrait}
+                    type={ItemOfIndex.type}
+                    id={ItemOfIndex.id}
+                    favourite={ItemOfIndex.favourite}
+                    name={ItemOfIndex.name}
+                    special_ingredient={ItemOfIndex.special_ingredient}
+                    ingredients={ItemOfIndex.ingredients}
+                    average_rating={ItemOfIndex.average_rating}
+                    ratings_count={ItemOfIndex.ratings_count}
+                    roasted={ItemOfIndex.roasted}
+                    BackHandler={BackHandler}
+                    ToggleFavourite={ToggleFavourite}
+                />
                 <View style={styles.FooterInfoArea}>
                     <Text style={styles.InfoTitle}>Description</Text>
 
@@ -109,6 +126,22 @@ const DetailsScreen = ({ navigation, route }: any) => {
                         ))}
                     </View>
                 </View>
+                <PaymentFooter
+                    price={price}
+                    buttonTitle="Add to Cart"
+                    buttonPressHandler={() => {
+                        addToCarthandler({
+                            id: ItemOfIndex.id,
+                            index: ItemOfIndex.index,
+                            name: ItemOfIndex.name,
+                            roasted: ItemOfIndex.roasted,
+                            imagelink_square: ItemOfIndex.imagelink_square,
+                            special_ingredient: ItemOfIndex.special_ingredient,
+                            type: ItemOfIndex.type,
+                            price: price,
+                        });
+                    }}
+                />
             </ScrollView>
         </View>
     );
