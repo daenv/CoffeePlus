@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { BlurView } from 'expo-blur';
 import { COLORS } from '../theme/theme';
 import HomeScreen from '../screens/HomeScreen';
-import { BlurView } from 'expo-blur';
 import CartScreen from '../screens/CartScreen';
 import OrderHistoryScreen from '../screens/OrderHIstoryScreen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';

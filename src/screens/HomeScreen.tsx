@@ -13,6 +13,7 @@ import {
 //import {useStore} from '../store/store';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../theme/theme';
+import HeaderBar from '../components/HeaderBar';
 
 const HomeScreen = ({ navigation }: any) => {
     return (
@@ -20,6 +21,8 @@ const HomeScreen = ({ navigation }: any) => {
             <StatusBar backgroundColor={COLORS.primaryBlackHex} />
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.ScrollViewFlex}>
                 {/* App Header */}
+
+                <HeaderBar />
                 <Text style={styles.ScreenTitle}>Find the best{'\n'}coffee for you</Text>
             </ScrollView>
         </View>
@@ -32,7 +35,6 @@ const styles = StyleSheet.create({
     ScreenContainer: {
         flex: 1,
         backgroundColor: COLORS.primaryBlackHex,
-        
     },
     ScrollViewFlex: {
         flexGrow: 1,
