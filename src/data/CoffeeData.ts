@@ -359,5 +359,25 @@ const CoffeeData = [
     type: 'Coffee',
     index: 17,
   },
+  {
+    id: 'C19',
+    name: 'Salted Caramel Mocha',
+    description: `The word "macchiato" means spotted, so a macchiato espresso is an espresso with a splash of milk. Most coffee shops will top off this type of coffee drink with some foamed milk instead of just steamed milk for what's known as a traditional macchiato. `,
+    roasted: 'Medium Roasted',
+    imagelink_square: require('../assets/coffee_assets/macchiato/square/macchiato_pic_3_square.png'),
+    imagelink_portrait: require('../assets/coffee_assets/macchiato/portrait/macchiato_pic_3_portrait.png'),
+    ingredients: 'Milk',
+    special_ingredient: 'With Steamed Milk',
+    prices: [
+      {size: 'S', price: '1.53', currency: '$'},
+      {size: 'M', price: '3.37', currency: '$'},
+      {size: 'L', price: '5.29', currency: '$'},
+    ],
+    average_rating: 4.9,
+    ratings_count: '6,879',
+    favourite: false,
+    type: 'Coffee',
+    index: 18,
+  },
 ];
 export default CoffeeData;
