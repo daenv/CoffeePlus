@@ -1,5 +1,5 @@
 1.Fix Details,Cart. 
 2.Create Payment and OrderHistory ! 
 3.Update form Icons
-4.Config Ts.json 
+4.Fix PaymentScreen
 5.Update CoffeeData

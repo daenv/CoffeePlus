@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, StatusBar, ScrollView, TouchableOpacity } from 'react-native';
 import { useStore } from '../store/store';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
@@ -8,6 +8,7 @@ import EmptyListAnimation from '../components/EmptyListAnimation';
 import FavoritesItemCard from '../components/FavoritesItemCard';
 
 const FavoritesScreen = ({ navigation }: any) => {
+    const [FavoriteProduct, setFavoriteProduct] = useState();
     const FavoritesList = useStore((state: any) => state.FavoritesList);
     const tabBarHeight = useBottomTabBarHeight();
     const addToFavoriteList = useStore((state: any) => state.addToFavoriteList);
