@@ -4,6 +4,7 @@ import ImageBackgroundInfo from './ImageBackgroundInfo';
 import { LinearGradient } from 'expo-linear-gradient';
 import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../theme/theme';
 
+
 interface FavoritesItemCardProps {
     id: string;
     imagelink_portrait: ImageProps;

@@ -73,8 +73,8 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
                                 ToggleFavourite(favourite, type, id);
                             }}
                         >
-                            <GradientBGIcon
-                                name="like"
+                            <GradientHeartIcon
+                                name="heart"
                                 color={favourite ? COLORS.primaryRedHex : COLORS.primaryLightGreyHex}
                                 size={FONTSIZE.size_16}
                             />
