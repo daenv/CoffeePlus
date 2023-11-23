@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden',
-        marginTop: 20,
+        
     },
     Image: {
         height: SPACING.space_36,

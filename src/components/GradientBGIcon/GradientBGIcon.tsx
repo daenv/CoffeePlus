@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: COLORS.secondaryDarkGreyHex,
         overflow: 'hidden',
-        marginTop: 20,
+        
     },
     LinearGradientBG: {
         height: SPACING.space_36,

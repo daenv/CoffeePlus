@@ -113,7 +113,7 @@ const HomeScreen = ({ navigation }: any) => {
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.ScrollViewFlex}>
                 {/* App Header */}
 
-                <HeaderBar />
+                <HeaderBar title='The Coffee Shop' />
                 <Text style={styles.ScreenTitle}>Find the best{'\n'}coffee for you</Text>
 
                 {/* Search Input */}

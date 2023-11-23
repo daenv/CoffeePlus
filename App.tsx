@@ -15,11 +15,11 @@ async function loadFonts() {
 }
 
 export default function App() {
-    useEffect(() => {
+   /*  useEffect(() => {
         loadFonts();
     }, []);
 
-    /* useEffect(() => {
+    useEffect(() => {
         SplashScreen.hide();
     }, []); */
     return (
