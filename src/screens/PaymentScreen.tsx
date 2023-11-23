@@ -2,6 +2,29 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, StatusBar, ScrollView, TouchableOpacity } from 'react-native';
 import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../theme/theme';
 
+const PaymentList = [
+    {
+        name: 'Wallet',
+        icon: 'icon',
+        isIcon: true,
+    },
+    {
+        name: 'Google Pay',
+        icon: require('../assets/app_images/gpay.png'),
+        isIcon: false,
+    },
+    {
+        name: 'Apple Pay',
+        icon: require('../assets/app_images/applepay.png'),
+        isIcon: false,
+    },
+    {
+        name: 'Amazon Pay',
+        icon: require('../assets/app_images/amazonpay.png'),
+        isIcon: false,
+    },
+];
+
 const PaymentScreen = () => {
     return (
         <View>
