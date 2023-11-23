@@ -38,38 +38,41 @@ const OrderHistoryScreen = ({ navigation }: any) => {
             ) : (
                 <></>
             )}
+
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.ScrollViewFlex}>
-                <View style={styles.ItemContainer}>
-                    <HeaderBar title="Order History" />
-                    
-                    {OrderHistoryList.length == 0 ? (
-                        <EmptyListAnimation title={'No Order History'} />
+                <View style={[styles.ScrollViewInnerView, { marginBottom: tabBarHeight }]}>
+                    <View style={styles.ItemContainer}>
+                        <HeaderBar title="Order History" />
+
+                        {OrderHistoryList.length == 0 ? (
+                            <EmptyListAnimation title={'No Order History'} />
+                        ) : (
+                            <View style={styles.ListItemContainer}>
+                                {OrderHistoryList.map((data: any, index: any) => (
+                                    <OrderHistoryCard
+                                        key={index.toString()}
+                                        navigationHandler={navigationHandler}
+                                        CartList={data.CartList}
+                                        CartListPrice={data.CartListPrice}
+                                        OrderDate={data.OrderDate}
+                                    />
+                                ))}
+                            </View>
+                        )}
+                    </View>
+                    {OrderHistoryList.length > 0 ? (
+                        <TouchableOpacity
+                            style={styles.DownloadButton}
+                            onPress={() => {
+                                buttonPressHandler();
+                            }}
+                        >
+                            <Text style={styles.ButtonText}>Download</Text>
+                        </TouchableOpacity>
                     ) : (
-                        <View style={styles.ListItemContainer}>
-                            {OrderHistoryList.map((data: any, index: any) => (
-                                <OrderHistoryCard
-                                    key={index.toString()}
-                                    navigationHandler={navigationHandler}
-                                    CartList={data.CartList}
-                                    CartListPrice={data.CartListPrice}
-                                    OrderDate={data.OrderDate}
-                                />
-                            ))}
-                        </View>
+                        <></>
                     )}
                 </View>
-                {OrderHistoryList.length > 0 ? (
-                    <TouchableOpacity
-                        style={styles.DownloadButton}
-                        onPress={() => {
-                            buttonPressHandler();
-                        }}
-                    >
-                        <Text style={styles.ButtonText}>Download</Text>
-                    </TouchableOpacity>
-                ) : (
-                    <></>
-                )}
             </ScrollView>
         </View>
     );

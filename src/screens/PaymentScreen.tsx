@@ -43,10 +43,7 @@ const PaymentScreen = ({ navigation, route }: any) => {
         setShowAnimation(true);
         addToOrderHistoryListFromCart();
         calculateCartPrice();
-        setTimeout(() => {
-            setShowAnimation(false);
-            navigation.navigate('History');
-        }, 2000);
+        navigation.navigate('History');
     };
 
     return (

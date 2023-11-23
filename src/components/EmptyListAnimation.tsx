@@ -20,9 +20,11 @@ const styles = StyleSheet.create({
     EmptyCartContainer: {
         flex: 1,
         justifyContent: 'center',
+        alignItems: 'center',
     },
     LottieStyle: {
         height: 300,
+        
     },
     LottieText: {
         fontFamily: FONTFAMILY.poppins_medium,

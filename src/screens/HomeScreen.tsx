@@ -10,8 +10,8 @@ import {
     ToastAndroid,
     Dimensions,
     FlatList,
+    Alert,
 } from 'react-native';
-import SvgUri from 'react-native-svg-uri';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../theme/theme';
 import HeaderBar from '../components/HeaderBar';
@@ -50,7 +50,6 @@ const HomeScreen = ({ navigation }: any) => {
     const calculateCartPrice = useStore((state: any) => state.calculateCartPrice);
 
     const [categories, setCategories] = useState(getCategoriesFromData(CoffeeList));
-
     const [searchText, setSearchText] = useState('');
     const [categoryIndex, setCategoryIndex] = useState({
         index: 0,
@@ -105,7 +104,7 @@ const HomeScreen = ({ navigation }: any) => {
             prices,
         });
         calculateCartPrice();
-        ToastAndroid.showWithGravity(`${name} is Added to Cart`, ToastAndroid.SHORT, ToastAndroid.CENTER);
+        Alert.alert(`${name} is Added to Cart`, '', [{ text: 'OK' }]);
     };
     return (
         <View style={styles.ScreenContainer}>
@@ -113,7 +112,7 @@ const HomeScreen = ({ navigation }: any) => {
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.ScrollViewFlex}>
                 {/* App Header */}
 
-                <HeaderBar title='The Coffee Shop' />
+                <HeaderBar title="The Coffee Shop" />
                 <Text style={styles.ScreenTitle}>Find the best{'\n'}coffee for you</Text>
 
                 {/* Search Input */}
