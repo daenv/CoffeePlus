@@ -31,6 +31,7 @@ const OrderHistoryScreen = ({ navigation }: any) => {
 
     return (
         <View style={styles.ScreenContainer}>
+            <ScrollView>
             <StatusBar backgroundColor={COLORS.primaryBlackHex} />
 
             {showAnimation ? (
@@ -73,6 +74,7 @@ const OrderHistoryScreen = ({ navigation }: any) => {
                         <></>
                     )}
                 </View>
+            </ScrollView>
             </ScrollView>
         </View>
     );
