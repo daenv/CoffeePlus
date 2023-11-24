@@ -33,6 +33,7 @@
     "react-native-svg-uri": "^1.2.3",
     "react-native-vector-icons": "^10.0.2",
     "redux": "^4.2.1",
+    "yarn": "^1.22.21",
     "zustand": "^4.4.6"
   },
   "devDependencies": {
